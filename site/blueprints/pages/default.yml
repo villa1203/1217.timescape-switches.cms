@@ -20,7 +20,7 @@ columns:
           template: image
 
       aside:
-        label: Contenu supplemental (à gauche sur desktop)
+        label: Contenu supplémentaire (à gauche sur desktop)
         type: blocks
         fieldsets:
           - bullet_points
