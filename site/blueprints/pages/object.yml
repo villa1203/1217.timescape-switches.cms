@@ -1,0 +1,77 @@
+title: Projet
+
+icon: 🖼️
+
+status:
+  draft:
+    label: Brouillon
+    text: Le projet est toujours en mode brouillon. Elle ne peut être vue que par les éditeurs ayant accès à l'administration.
+  listed:
+    label: Publié
+    text: Le projet est en ligne.
+
+
+columns:
+  header_container:
+    width: 1/1
+    fields:
+      baseline:
+        width: 2/3
+        label: Baseline
+        type: text
+
+      cover_front:
+        width: 1/2
+        type: files
+        multiple: true
+        query: page.images.template('image')
+        label: Image(s) de couverture "avant"
+        help: Images qui s'afficherons sur la page d'accueil
+        uploads:
+          template: image
+
+      cover_back:
+        width: 1/2
+        type: files
+        multiple: false
+        query: page.images.template('image')
+        label: Image(s) de couverture "intérieur"
+        help: Images qui s'afficherons au hover
+        uploads:
+          template: image
+
+
+  main:
+    width: 3/4
+    fields:
+      content:
+        label: Contenu
+        type: blocks
+        fieldsets:
+          - image
+          - text
+          - video
+
+  aside:
+    width: 1/4
+    fields:
+
+      strategies:
+        label: Temporal Strategies
+        type: list
+
+      production:
+        label: Production
+        type: list
+
+      pre_commitment:
+        label: Pre-commitment
+        type: list
+
+      delegated_agency:
+        label: Delegated agency
+        type: list
+
+      action_and_effect:
+        label: Separation of action and effect
+        type: list

@@ -6,17 +6,28 @@ columns:
   main:
     width: 1/1
     fields:
+      cover:
+        width: 1/2
+        type: files
+        multiple: true
+        query: page.images.template('image')
+        label: Image(s) de couverture "avant"
+        help: Images qui s'afficherons sur la page d'accueil
+        uploads:
+          template: image
+
+      aside:
+        label: Contenu supplemental (à gauche sur desktop)
+        type: blocks
+        fieldsets:
+          - image
+          - text
+          - video
+
       content:
         label: Contenu
         type: blocks
         fieldsets:
-          - article_heading
-          - bullet_points
-          - clients_list
-          - collaborators_list
-          - gallery
           - image
-          - pages_list
-          - profiles
           - text
           - video

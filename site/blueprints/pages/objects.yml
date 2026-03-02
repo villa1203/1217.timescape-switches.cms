@@ -7,7 +7,7 @@ sections:
     headline: Projets
     type: pages
     status: all
-    templates: project
+    templates: object
 #    sortBy: date desc
     info: "{{ page.date }}"
     image:

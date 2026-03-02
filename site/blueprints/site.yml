@@ -8,11 +8,11 @@ columns:
       pages:
         type: pages
         templates:
-          - projects
+          - objects
         headline: " "
         layout: cards
         size: large
-        status: listed
+#        status: listed
   - width: 2/3
     sections:
       home:
@@ -33,7 +33,7 @@ columns:
           - sectors
         layout: cards
         size: tiny
-        status: listed
+#        status: listed
 
   - width: 1/8
     sections:
@@ -44,7 +44,7 @@ columns:
           - services
         layout: cards
         size: tiny
-        status: listed
+#        status: listed
 
   - width: 1/8
     sections:
@@ -67,5 +67,5 @@ columns:
           - clients
         layout: cards
         size: tiny
-        status: listed
+#        status: listed
 
