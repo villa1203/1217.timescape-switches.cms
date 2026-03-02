@@ -2,6 +2,10 @@ title: Projects
 
 icon: 🏠
 
+options:
+  changeStatus: false
+
+
 sections:
   projects:
     headline: Projets

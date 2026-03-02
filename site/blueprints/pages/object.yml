@@ -48,6 +48,7 @@ columns:
         label: Contenu
         type: blocks
         fieldsets:
+          - bullet_points
           - image
           - text
           - video
