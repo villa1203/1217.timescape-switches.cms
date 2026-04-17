@@ -9,7 +9,7 @@ columns:
   main:
     width: 1/1
     fields:
-      aside:
+      content_secondary:
         label: Contenu supplémentaire (à gauche sur desktop)
         type: blocks
         fieldsets:
