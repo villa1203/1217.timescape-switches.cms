@@ -60,19 +60,3 @@ columns:
       strategies:
         label: Temporal Strategies
         type: list
-
-      production:
-        label: Production
-        type: list
-
-      pre_commitment:
-        label: Pre-commitment
-        type: list
-
-      delegated_agency:
-        label: Delegated agency
-        type: list
-
-      action_and_effect:
-        label: Separation of action and effect
-        type: list
