@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Reusable "3D model" tab.
+#
+# Portable across Kirby projects: copy this single file into another project's
+# site/blueprints/tabs/ folder, then reference it from any page blueprint with:
+#
+#   tabs:
+#     model3d:
+#       extends: tabs/model_3d
+#
+# Only the .glb file lives in the CMS. The front-end object components own the
+# rendering (x-ray effect, camera, materials, etc.) — they just load this file
+# instead of a hard-coded /public path.
+# ─────────────────────────────────────────────────────────────────────────────
+label: 3D
+icon: cube
+
+columns:
+  model_col:
+    width: 1/1
+    fields:
+      # NOTE: field is named "model_file" not "model" — "model" collides with
+      # Kirby's reserved Page::model() method and KQL refuses to query it.
+      model_file:
+        label: Modèle 3D (.glb)
+        type: files
+        multiple: false
+        layout: list
+        # Restrict the picker to this object's own .glb uploads.
+        query: page.files.template("model3d")
+        help: Glisse un fichier .glb. C'est ce modèle qui sera chargé par le composant 3D de l'objet sur le front.
+        uploads:
+          # Assign the model3d file blueprint so .glb passes validation.
+          template: model3d

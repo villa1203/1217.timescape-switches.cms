@@ -1,0 +1,13 @@
+# File blueprint for uploaded 3D models.
+#
+# Declaring `accept.extension` here is what lets .glb through: without an
+# explicit accept, Kirby falls back to its default file blueprint which only
+# allows image/document/archive/audio/video — and a .glb is type "model", so
+# it gets rejected ("Type de fichier invalide").
+#
+# Portable: copy this file alongside tabs/model_3d.yml when reusing in another
+# project (the model_3d tab references this template via uploads.template).
+title: Modèle 3D
+
+accept:
+  extension: glb, gltf

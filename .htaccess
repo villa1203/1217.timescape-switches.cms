@@ -56,6 +56,12 @@ AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
+# register 3D model mime types so .glb isn't forced to text/plain below
+<IfModule mod_mime.c>
+AddType model/gltf-binary .glb
+AddType model/gltf+json .gltf
+</IfModule>
+
 # set security headers in all responses
 <IfModule mod_headers.c>
 
@@ -63,5 +69,11 @@ AddOutputFilterByType DEFLATE application/x-javascript
 # (hardens against attacks from malicious file uploads)
 Header set Content-Type "text/plain" "expr=-z %{CONTENT_TYPE}"
 Header set X-Content-Type-Options "nosniff"
+
+# allow the front-end (different domain) to load 3D model files via CORS —
+# Three.js GLTFLoader fetches them as cross-origin requests.
+<FilesMatch "\.(glb|gltf)$">
+  Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
 
 </IfModule>

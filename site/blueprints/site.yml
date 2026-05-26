@@ -3,6 +3,12 @@ title: Site
 
 
 columns:
+  - width: 1/1
+    fields:
+      shabbat_title:
+        label: Titre Shabbat (home)
+        type: text
+        help: Phrase affichée en grand au centre de la home pendant Shabbat (à la place du logo).
   - width: 1/3
     sections:
       pages:

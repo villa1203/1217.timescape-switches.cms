@@ -11,52 +11,61 @@ status:
     text: Le projet est en ligne.
 
 
-columns:
-  header_container:
-    width: 1/1
-    fields:
-      baseline:
-        width: 2/3
-        label: Baseline
-        type: text
+tabs:
+  content:
+    label: Contenu
+    icon: text
+    columns:
+      header_container:
+        width: 1/1
+        fields:
+          baseline:
+            width: 2/3
+            label: Baseline
+            type: text
 
-      cover_front:
-        width: 1/2
-        type: files
-        multiple: true
-        query: page.images.template('image')
-        label: Image(s) de couverture "avant"
-        help: Images qui s'afficherons sur la page d'accueil
-        uploads:
-          template: image
+          cover_front:
+            width: 1/2
+            type: files
+            multiple: true
+            query: page.images.template('image')
+            label: Image(s) de couverture "avant"
+            help: Images qui s'afficherons sur la page d'accueil
+            uploads:
+              template: image
 
-      cover_back:
-        width: 1/2
-        type: files
-        multiple: false
-        query: page.images.template('image')
-        label: Image(s) de couverture "intérieur"
-        help: Images qui s'afficherons au hover
-        uploads:
-          template: image
+          cover_back:
+            width: 1/2
+            type: files
+            multiple: false
+            query: page.images.template('image')
+            label: Image(s) de couverture "intérieur"
+            help: Images qui s'afficherons au hover
+            uploads:
+              template: image
 
 
-  main:
-    width: 3/4
-    fields:
-      content:
-        label: Contenu
-        type: blocks
-        fieldsets:
-          - bullet_points
-          - image
-          - text
-          - video
+      main:
+        width: 3/4
+        fields:
+          content:
+            label: Contenu
+            type: blocks
+            fieldsets:
+              - bullet_points
+              - image
+              - text
+              - video
 
-  aside:
-    width: 1/4
-    fields:
+      aside:
+        width: 1/4
+        fields:
 
-      strategies:
-        label: Temporal Strategies
-        type: list
+          strategies:
+            label: Temporal Strategies
+            type: list
+
+  # Reusable 3D-model tab — duplicate site/blueprints/tabs/model_3d.yml into
+  # another project and reference it the same way to get drag-and-drop GLB 3D.
+  model3d:
+    extends: tabs/model_3d
