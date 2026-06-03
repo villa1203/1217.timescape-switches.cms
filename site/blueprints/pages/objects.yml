@@ -5,18 +5,24 @@ icon: 🏠
 options:
   changeStatus: false
 
+tabs:
+  content:
+    label: Projets
+    icon: page
+    sections:
+      projects:
+        headline: Projets
+        type: pages
+        status: all
+        templates: object
+#        sortBy: date desc
+        info: "{{ page.date }}"
+        image:
+          cover: true
+          query: page.covers.toFile
+        layout: cards
+        size: small
+        limit: 500
 
-sections:
-  projects:
-    headline: Projets
-    type: pages
-    status: all
-    templates: object
-#    sortBy: date desc
-    info: "{{ page.date }}"
-    image:
-      cover: true
-      query: page.covers.toFile
-    layout: cards
-    size: small
-    limit: 500
+  seo:
+    extends: tabs/seo

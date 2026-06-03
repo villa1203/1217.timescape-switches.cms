@@ -1,31 +1,88 @@
 title: Site
 
+tabs:
+  general:
+    label: Général
+    icon: home
+    columns:
+      - width: 1/1
+        fields:
+          shabbat_title:
+            label: Titre Shabbat (home)
+            type: text
+            help: Phrase affichée en grand au centre de la home pendant Shabbat (à la place du logo).
+      - width: 1/3
+        sections:
+          pages:
+            type: pages
+            templates:
+              - objects
+            headline: " "
+            layout: cards
+            size: large
+            status: listed
+      - width: 2/3
+        sections:
+          home:
+            type: pages
+            templates:
+              - default
+            headline: " "
+            layout: cards
+            size: large
+            status: listed
 
+  seo:
+    label: SEO
+    icon: search
+    columns:
+      - width: 1/2
+        fields:
+          site_title:
+            label: Titre du site
+            type: text
+            help: Nom du site, ajouté après le titre de chaque page (ex. « Page — Titre du site ») et utilisé comme nom Open Graph.
 
-columns:
-  - width: 1/1
-    fields:
-      shabbat_title:
-        label: Titre Shabbat (home)
-        type: text
-        help: Phrase affichée en grand au centre de la home pendant Shabbat (à la place du logo).
-  - width: 1/3
-    sections:
-      pages:
-        type: pages
-        templates:
-          - objects
-        headline: " "
-        layout: cards
-        size: large
-        status: listed
-  - width: 2/3
-    sections:
-      home:
-        type: pages
-        templates:
-          - default
-        headline: " "
-        layout: cards
-        size: large
-        status: listed
+          seo_description:
+            label: Description par défaut
+            type: textarea
+            maxlength: 160
+            buttons: false
+            help: Description de la home et valeur de repli pour les pages sans description propre.
+
+          og_description:
+            label: Description Open Graph (home)
+            type: textarea
+            maxlength: 200
+            buttons: false
+
+          og_image:
+            label: Image de partage par défaut
+            type: files
+            multiple: false
+            max: 1
+            query: site.images
+            uploads:
+              template: image
+            help: Recommandé 1200×630px. Utilisée pour la home et en repli pour les pages sans image propre.
+
+      - width: 1/2
+        fields:
+          _index_headline:
+            type: headline
+            label: Indexation de la home
+
+          seo_index:
+            label: Indexer la home
+            type: toggle
+            default: true
+
+          seo_follow:
+            label: Suivre les liens
+            type: toggle
+            default: true
+
+          seo_index_images:
+            label: Indexer les images
+            type: toggle
+            default: true

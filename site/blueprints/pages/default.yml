@@ -5,24 +5,31 @@ icon: 👤
 options:
   changeStatus: false
 
-columns:
-  main:
-    width: 1/1
-    fields:
-      content_secondary:
-        label: Contenu supplémentaire (à gauche sur desktop)
-        type: blocks
-        fieldsets:
-          - bullet_points
-          - image
-          - text
-          - video
+tabs:
+  content:
+    label: Contenu
+    icon: text
+    columns:
+      main:
+        width: 1/1
+        fields:
+          content_secondary:
+            label: Contenu supplémentaire (à gauche sur desktop)
+            type: blocks
+            fieldsets:
+              - bullet_points
+              - image
+              - text
+              - video
 
-      content:
-        label: Contenu
-        type: blocks
-        fieldsets:
-          - bullet_points
-          - image
-          - text
-          - video
+          content:
+            label: Contenu
+            type: blocks
+            fieldsets:
+              - bullet_points
+              - image
+              - text
+              - video
+
+  seo:
+    extends: tabs/seo

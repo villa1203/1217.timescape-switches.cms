@@ -69,3 +69,6 @@ tabs:
   # another project and reference it the same way to get drag-and-drop GLB 3D.
   model3d:
     extends: tabs/model_3d
+
+  seo:
+    extends: tabs/seo
