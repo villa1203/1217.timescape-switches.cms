@@ -3,7 +3,9 @@ title: About
 icon: 👤
 
 options:
-  changeStatus: false
+  # Allow publishing / unpublishing (draft → listed) so new or duplicated pages
+  # can be made live from the Panel.
+  changeStatus: true
 
 tabs:
   content:

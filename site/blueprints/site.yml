@@ -27,10 +27,14 @@ tabs:
             type: pages
             templates:
               - default
+            # Enable the "+ Add" button; new pages use the default template.
+            create: default
             headline: " "
             layout: cards
             size: large
-            status: listed
+            # Show drafts too, so a freshly created/duplicated page appears here
+            # and can be published.
+            status: all
 
   seo:
     label: SEO
